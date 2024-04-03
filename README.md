@@ -38,30 +38,74 @@ Maybes -> mySQL, knex
 
 Reelgood API - https://data.reelgood.com/api-docs/api-documentation/
 
+Possibly- Utelly, Streaming Availablity, OTT Details
+
 ### Sitemap
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
+
+Home page/Large searchbar. This will be the main and core screen of the project. The searchbar and dropdown take up the majority of the screen. Selecting a movie navigates to movie details page
+
+There is a profile icon in the header which leads to the profile page, containing user information.
+
+Collection page is equivalent to mylist/favorites on other sites. Will consist of movie components that will display a summary when hovered over. Can be clicked on to redirect to the movie page.
+
+Movie details page. Contains in depth information on specific movie. Also possible to comment or add to collection on the page.
+
+Comments page Used for each movie. Shows the list of comments for the movie as well as adding a new comment
 
 ### Mockups
 
 Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
 
+Very brief Figma Outline -> https://www.figma.com/file/I8UhoTPQlHpeYlMcvCqAr2/Capstone-Project?type=whiteboard&node-id=0%3A1&t=YiMrsgxBT9E61ohP-1
+
+I'm not very good at designing things by hand. I've been having much greater success with shifting colors using css. Definitely a lot more to add.
+
 ### Data
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
+
+Will use mySQL for users and comments. Users will have a foreign key to comments and a list of ids for movies in their collection. 
+
+Comments will have a correlating user and a foreign key for the movie
+
+Still debating between storing the movie data in my database or using the data from the GET requests.
 
 ### Endpoints
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
+/home
+/home?s={movieId}
+/profile
+/collection
+/:movieId
+/:movieId/comments
+
 ### Auth
 
 Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+
+I will have authorization, most likely using passport.
 
 ## Roadmap
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
+Have the mockups and database done by this Saturday night 4/6
+Search functionality finished by 4/9
+Profile/User Auth 4/11
+Collection 4/13
+Comments 4/14
+Debugging 4/16
+
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+
+Video for the trailer of the movie
+
+Filters for the search
+
+More services than 3 or 4
