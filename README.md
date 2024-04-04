@@ -59,13 +59,13 @@ Comments page Used for each movie. Shows the list of comments for the movie as w
 Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
 
 #### Home Page
-![Home Page] (./mockups/HomePage.png)
+![Home Page](./mockups/HomePage.png)
 
 #### Searchbar
-![Home Page w/ Searchbar] (./mockups/Searchbar.png)
+![Home Page w/ Searchbar](./mockups/Searchbar.png)
 
 #### Collection Page
-![Collection Page] (./mockups/Collection.png)
+![Collection Page](./mockups/Collection.png)
 
 I'm not very good at designing things by hand. I've been having much greater success with shifting colors using css. Definitely a lot more to add.
 
