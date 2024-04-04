@@ -14,8 +14,6 @@ The target audience is anyone from teenagers to people well into adulthood who u
 
 ### Features
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
-
  -> Searchbar - Core feature
  -> Selection of streaming services - Will be viewable as a filter component
  -> An equivalent to MyList or something similar to mark down movies to watch
@@ -28,9 +26,7 @@ List the functionality that your app will include. These can be written as user 
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
-
-Definites -> React, HTML, SASS, Node
+Definites -> React, HTML, SASS, Node, Express
 
 Maybes -> mySQL, knex
 
@@ -42,9 +38,7 @@ Possibly- Utelly, Streaming Availablity, OTT Details
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
-
-Home page/Large searchbar. This will be the main and core screen of the project. The searchbar and dropdown take up the majority of the screen. Selecting a movie navigates to movie details page
+Home page/Large searchbar. This will be the main and core screen of the project. Starts with the Home Page screenshot, then animates over to the searchbar. The searchbar and dropdown take up the majority of the screen. Selecting a movie navigates to movie details page
 
 There is a profile icon in the header which leads to the profile page, containing user information.
 
@@ -52,11 +46,9 @@ Collection page is equivalent to mylist/favorites on other sites. Will consist o
 
 Movie details page. Contains in depth information on specific movie. Also possible to comment or add to collection on the page.
 
-Comments page Used for each movie. Shows the list of comments for the movie as well as adding a new comment
+Comments will be undernath the Movie Details Page Used for each movie. Shows the list of comments for the movie as well as adding a new comment
 
 ### Mockups
-
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
 
 #### Home Page
 ![Home Page](./mockups/HomePage.png)
@@ -71,8 +63,6 @@ I'm not very good at designing things by hand. I've been having much greater suc
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out. 
-
 Will use mySQL for users and comments. Users will have a foreign key to comments and a list of ids for movies in their collection. 
 
 Comments will have a correlating user and a foreign key for the movie
@@ -83,33 +73,66 @@ Still debating between storing the movie data in my database or using the data f
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
+Routes: 
+
 /home
 /home?s={movieId}
 /profile
 /collection
 /:movieId
-/:movieId/comments
+
+Still working out the actual endpoints. I have a backup API I will be using, still trying to get in contact with Reelgood to get access to their API.
 
 ### Auth
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+I will have authorization, most likely using passport. I need to do further research to provide more details.
 
-I will have authorization, most likely using passport.
+Profile and collection pages will both require authorization to access.
+Searchbar, home, and video details will not.
 
 ## Roadmap
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+Use Fibonacci numbers for Story Points:
+1 point: ~ 30 minutes to complete
+2 points: ~ 1 hour to complete
+3 points: ~ half a workday to complete
+5 points: ~ whole workday to complete
 
-Have the mockups and database done by this Saturday night 4/6
-Search functionality finished by 4/9
-Profile/User Auth 4/11
-Collection 4/13
-Comments 4/14
-Debugging 4/16
+**Backlog:**
+
+Feature: create client      1
+
+Feature: create server      1
+
+Feature: create migrations  3
+
+Feature: create seeds       1
+
+Feature: GET list of movies by title    3
+
+Feature: GET individual movie       2
+
+Feature: Home Page/Searchbar    3      
+
+Feature: User Auth      3
+
+Feature: Video Details      3
+
+Feature: Collection     2~3
+
+Feature: Profile        2~3
+
+Feature: GET Comments   2
+
+Feature: POST Comment   2
+
+Feature: Comments Front-End      2
+
+Bug Fixes
+
+Demo Day ***4/19***
 
 ## Nice-to-haves
-
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
 
 Video for the trailer of the movie
 
