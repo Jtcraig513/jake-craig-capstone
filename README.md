@@ -34,7 +34,7 @@ Maybes -> mySQL, knex
 
 Reelgood API - https://data.reelgood.com/api-docs/api-documentation/
 
-Possibly- Utelly, Streaming Availablity, OTT Details
+Possibly- Streaming Availablity, Utelly, OTT Details
 
 ### Sitemap
 
