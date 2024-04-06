@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Gothic A1';
+  color: $White;
 }
 
 h1 {
@@ -58,4 +59,9 @@ h4 {
           @include td-P3-body-small;
       }
   }
+}
+
+.page-container {
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, black, $Purple-Background);
 }
