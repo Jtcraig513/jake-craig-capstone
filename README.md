@@ -1,141 +1,70 @@
-# Project Title
+# Getting Started with Create React App
 
-## Overview
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-My app's core is a search function for looking up movies from different streaming services all in one place. While the user will not be able to actually watch anything on the platform, they will be able to tell the app whcich streaming services they own, and then the searchbar will include only those services in the search.
+## Available Scripts
 
-### Problem
+In the project directory, you can run:
 
-There have been many times in the past where I've looked up a movie on Netflix and found that it wasn't on there and then proceed to login in to every other one of my streaming services just to search the same movie, only to find it wasn't on any of them. The purpose of this app is to remove that process and make a one-stop to replace it.
+### `npm start`
 
-### User Profile
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The target audience is anyone from teenagers to people well into adulthood who use a streaming service to watch content, primarily people in their 20's. It is meant to start out as a website but also be adjusted into a mobile app (will not be done for the demo). My app will have to have clear and concise, short instructions for any navigation. It is important that things are easy and quick to read. This app isn't designed for the user to spend hours on. Targetted to spend 1~20 minutes depending on why they are there.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Features
+### `npm test`
 
- -> Searchbar - Core feature
- -> Selection of streaming services - Will be viewable as a filter component
- -> An equivalent to MyList or something similar to mark down movies to watch
- -> Movie details Page for a selected movie
- -> User login - username, password, email
- -> Comments and adding comments to individual movies
- -> Database?????
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Implementation
+### `npm run build`
 
-### Tech Stack
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Definites -> React, HTML, SASS, Node, Express
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Maybes -> mySQL, knex
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### APIs
+### `npm run eject`
 
-Reelgood API - https://data.reelgood.com/api-docs/api-documentation/
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Possibly- Streaming Availablity, Utelly, OTT Details
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Sitemap
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Home page/Large searchbar. This will be the main and core screen of the project. Starts with the Home Page screenshot, then animates over to the searchbar. The searchbar and dropdown take up the majority of the screen. Selecting a movie navigates to movie details page
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-There is a profile icon in the header which leads to the profile page, containing user information.
+## Learn More
 
-Collection page is equivalent to mylist/favorites on other sites. Will consist of movie components that will display a summary when hovered over. Can be clicked on to redirect to the movie page.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Movie details page. Contains in depth information on specific movie. Also possible to comment or add to collection on the page.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Comments will be undernath the Movie Details Page Used for each movie. Shows the list of comments for the movie as well as adding a new comment
+### Code Splitting
 
-### Mockups
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-#### Home Page
-![Home Page](./mockups/HomePage.png)
+### Analyzing the Bundle Size
 
-#### Searchbar
-![Home Page w/ Searchbar](./mockups/Searchbar.png)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-#### Collection Page
-![Collection Page](./mockups/Collection.png)
+### Making a Progressive Web App
 
-I'm not very good at designing things by hand. I've been having much greater success with shifting colors using css. Definitely a lot more to add.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Data
+### Advanced Configuration
 
-Will use mySQL for users and comments. Users will have a foreign key to comments and a list of ids for movies in their collection. 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-Comments will have a correlating user and a foreign key for the movie
+### Deployment
 
-Still debating between storing the movie data in my database or using the data from the GET requests.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Endpoints
+### `npm run build` fails to minify
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
-
-Routes: 
-
-/home
-/home?s={movieId}
-/profile
-/collection
-/:movieId
-
-Still working out the actual endpoints. I have a backup API I will be using, still trying to get in contact with Reelgood to get access to their API.
-
-### Auth
-
-I will have authorization, most likely using passport. I need to do further research to provide more details.
-
-Profile and collection pages will both require authorization to access.
-Searchbar, home, and video details will not.
-
-## Roadmap
-
-Use Fibonacci numbers for Story Points:
-1 point: ~ 30 minutes to complete
-2 points: ~ 1 hour to complete
-3 points: ~ half a workday to complete
-5 points: ~ whole workday to complete
-
-**Backlog:**
-
-Feature: create client      1
-
-Feature: create server      1
-
-Feature: create migrations  3
-
-Feature: create seeds       1
-
-Feature: GET list of movies by title    3
-
-Feature: GET individual movie       2
-
-Feature: Home Page/Searchbar    3      
-
-Feature: User Auth      3
-
-Feature: Video Details      3
-
-Feature: Collection     2~3
-
-Feature: Profile        2~3
-
-Feature: GET Comments   2
-
-Feature: POST Comment   2
-
-Feature: Comments Front-End      2
-
-Bug Fixes
-
-Demo Day ***4/19***
-
-## Nice-to-haves
-
-Video for the trailer of the movie
-
-Filters for the search
-
-More services than 3 or 4
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
