@@ -1,16 +1,22 @@
 import './App.scss';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from './pages/Home/Home';
+import Search from './pages/Search/Search';
 import Header from './components/Header/Header';
+import { useState } from 'react';
 
 function App() {
+
+  const [firstRender, setFirstRender] = useState(true);
+
   return (
     <BrowserRouter>
       <section className='page-container'>
         <Header />
-        <Routes>
-            <Route path='/' element={<Home />} />
-        </Routes>
+        <section className='page-container__content'>
+          <Routes>
+              <Route path='/' element={<Search firstRender={firstRender}/>} />
+          </Routes>
+        </section>
       </section>
     </BrowserRouter>
   );
