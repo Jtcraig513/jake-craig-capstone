@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.result {
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    height: 10vh;
+
+}
+
+.result-container {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    color: $Slate;
+    justify-content: space-between;
+    border: 1px solid $Cloud;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__buncher {
+        display: flex;
+        align-items: center;
+
+        &-img {
+            height: 9vh;
+            width: auto;
+            border-radius: 4px;
+            margin-right: .575rem;
+        }
+    }
+
+    &__sources {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.hide {
+    display: none;
+}

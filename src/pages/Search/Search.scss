@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    box-shadow: 0px 2px 5px 0px $Blue-Violet;
+    position: relative;
+
+    &__bar {
+        
+        width: 100%;
+        position: sticky;
+
+        &-input {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 6px;
+            border: 2px solid $Blue-Violet;
+            font-size: 1rem;
+            
+        }
+        &-input:focus {
+            outline: none;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        background-color: $White;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        border-radius: 2px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+}

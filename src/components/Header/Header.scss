@@ -1,0 +1,42 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem;
+    @include tablet {
+        padding: 2.5rem;
+    }
+    @include desktop {
+        padding: 3.5rem;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        
+
+        &-link {
+            display: flex;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            justify-content: center;
+            text-decoration: none;
+            color: inherit;
+            @include tablet{
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            @include desktop{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+
+        &-item {
+            text-decoration: none;
+        }
+    }
+}
