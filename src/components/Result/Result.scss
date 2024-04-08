@@ -34,7 +34,22 @@
 
     &__sources {
         display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: .125rem;
+        padding-top: .25rem;
+
+        &-icons {
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+
+            &-icon {
+                border-radius: 6px;
+                height: 2rem;
+                width: 2rem;
+            }
+        }
     }
 }
 

@@ -13,7 +13,16 @@ function Search({ firstRender }) {
     //const [searchInput, setSearchInput] = useState("");
     const [searchInput, setSearchInput] = useState('');
     const [movieList, setMovieList] = useState([]);
-    const [services, setServices] = useState(['netflix', 'apple_tv', 'hbo_max', 'prime']);
+    const [services, setServices] = useState([
+        'netflix',
+        'apple_tv',
+        'hbo_max',
+        'hulu',
+        'prime',
+        'paramount_plus',
+        'disney_plus',
+        'peacock'
+    ]);
 
     const handleChange = async (event) => {
         setSearchInput(event.target.value);
@@ -49,12 +58,6 @@ function Search({ firstRender }) {
                     }
                 };
 
-                // const response = await axios.request(options);
-                // const data = response.data.contents;
-                // let filteredData = data.map((m)=>filterServices(m));
-                // if (filteredData.length>7) {
-                //     filteredData = filteredData.slice(0,7);
-                // }
                 const response = await axios.request(options);
                 const data = response.data.contents;
                 console.log(data);
@@ -70,9 +73,9 @@ function Search({ firstRender }) {
             }
         };
     
-        // Set a timeout to fetch data after 0.75 seconds if the search input remains unchanged
+        // Set a timeout to fetch data after 0.5 seconds if the search input remains unchanged
         if (searchInput.trim() !== '') {
-            timeoutId = setTimeout(fetchData, 650);
+            timeoutId = setTimeout(fetchData, 500);
         }
     
         // Clear the timeout when the component unmounts or when the search input changes
