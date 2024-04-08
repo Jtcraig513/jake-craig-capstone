@@ -9,6 +9,9 @@
     height: 10vh;
 
 }
+.result:hover {
+    background-color: adjust-hue($color: $Cloud, $degrees: 50);
+}
 
 .result-container {
     display: flex;
@@ -48,6 +51,16 @@
                 border-radius: 6px;
                 height: 2rem;
                 width: 2rem;
+                @include tablet {
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    border-radius: 8px;
+                }
+                @include desktop {
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 10px;
+                }
             }
         }
     }

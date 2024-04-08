@@ -10,7 +10,7 @@ import paramount_plus from '../../assets/logos/paramount_plus.png'
 import disney_plus from '../../assets/logos/disney_plus.jpg'
 import peacock from '../../assets/logos/peacock.jpg'
 
-function Result({index, id,title, release, sources,poster,moviesList}) {
+function Result({index, id,title, release, sources,poster}) {
     const imagesMapped = {
         'netflix': netflix,
         'hbo_max': hbo,
@@ -23,7 +23,7 @@ function Result({index, id,title, release, sources,poster,moviesList}) {
         'peacock_free': peacock
     }
     return (
-        <Link to='' className='result' id={`result${id}`}>
+        <Link to={`/movie/${id}`} className='result' id={`result${id}`}>
             <section className='result-container'>
                 <section className='result-container__buncher'>
                     <img src={poster} className='result-container__buncher-img' alt='Poster' />
