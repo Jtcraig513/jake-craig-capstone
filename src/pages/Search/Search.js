@@ -3,26 +3,26 @@ import './Search.scss';
 import axios from 'axios';
 import Result from '../../components/Result/Result';
 
-function Search({ firstRender }) {
+function Search({ firstRender, services, setServices }) {
 
     const apiKey = process.env.REACT_APP_API_KEY;
-
     const apiMHost = process.env.REACT_APP_MOVIES_API_HOST;
     const apiMUrl = process.env.REACT_APP_MOVIES_API_URL;
 
     //const [searchInput, setSearchInput] = useState("");
     const [searchInput, setSearchInput] = useState('');
     const [movieList, setMovieList] = useState([]);
-    const [services, setServices] = useState([
-        'netflix',
-        'apple_tv',
-        'hbo_max',
-        'hulu',
-        'prime',
-        'paramount_plus',
-        'disney_plus',
-        'peacock'
-    ]);
+    // const [services, setServices] = useState([
+    //     'netflix',
+    //     'apple_tv',
+    //     'hbo_max',
+    //     'hulu',
+    //     'prime',
+    //     'paramount_plus',
+    //     'disney_plus',
+    //     'peacock',
+    //     'peacock_free'
+    // ]);
 
     const handleChange = async (event) => {
         setSearchInput(event.target.value);
@@ -98,7 +98,6 @@ function Search({ firstRender }) {
                     release={movie.release_date}
                     sources={movie.sources}
                     poster={movie.poster_path}
-                    movieList={movieList}
                 />
             );
         })
