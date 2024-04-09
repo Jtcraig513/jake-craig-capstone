@@ -13,30 +13,30 @@
         padding: 3.5rem;
     }
 
+    &__logo {
+        text-decoration: none;
+        &:link,
+        &:visited {
+          color: inherit;
+        }
+    }
+
     &__nav {
         display: flex;
         flex-direction: row;
-        
+        gap: 1.5rem;
+        &-item {
+            text-decoration: none;
+        }
+    }
 
-        &-link {
+    &__nav-link {
+        &:link,
+        &:visited {
             display: flex;
-            padding-left: .5rem;
-            padding-right: .5rem;
             justify-content: center;
             text-decoration: none;
             color: inherit;
-            @include tablet{
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-            @include desktop{
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-        }
-
-        &-item {
-            text-decoration: none;
         }
     }
 }

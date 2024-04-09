@@ -1,0 +1,42 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.post {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #fcf2ee;
+    &__title {
+      font-size: 1.2rem;
+      color: #a37a74;
+    }
+    &__details {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__author {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      color: #666;
+    }
+    &__avatar {
+      height: 1.5rem;
+    }
+    &__username {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+    &__owned {
+      font-size: 0.75rem;
+      margin-left: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      background-color: #e4f1e8;
+    }
+    &__published {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #666;
+    }
+}

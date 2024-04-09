@@ -1,0 +1,8 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.posts-section {
+    position: relative;
+    padding-bottom: 175px;
+}

@@ -1,21 +1,31 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
     return (
         <header className='header'>
-            <img className='header__logo' src='' alt='logo'/>
+            <Link className='header__logo' to='/'>
+                <img className='header__logo-img' src='' alt='logo'/>
+            </Link>
             <nav className='header__nav'>
-                <NavLink to='' className='header__nav-link'>
+                <NavLink to='/' className={(navData) => navData.isActive
+                    ? 'header__nav-link header__nav-link--active'
+                    : 'header__nav-link' }
+                    exact='true'>
                     <h3 className='header__nav-item'>Search</h3>
                 </NavLink>
-                <NavLink to='' className='header__nav-link'>
+                
+                <NavLink to='/collection' className={(navData) => navData.isActive
+                    ? 'header__nav-link header__nav-link--active'
+                    : 'header__nav-link' }
+                    exact='true'>
                     <h3 className='header__nav-item'>Collection</h3>
                 </NavLink>
-                <NavLink to='' className='header__nav-link'>
-                    <h3 className='header__nav-item'>Login</h3>
-                </NavLink>
-                <NavLink to='' className='header__nav-link'>
+
+                <NavLink to='/profile' className={(navData) => navData.isActive
+                    ? 'header__nav-link header__nav-link--active'
+                    : 'header__nav-link' }
+                    exact='true'>
                     <h3 className='header__nav-item'>Profile</h3>
                 </NavLink>
             </nav>

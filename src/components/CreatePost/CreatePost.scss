@@ -1,0 +1,79 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.create-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    left: 12.5%;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 0.25rem 1rem 1rem 1rem;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.post-form {
+    width: 100%;
+    position: relative;
+    margin-bottom: -0.5rem;
+
+    &__fields {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    &__field {
+        margin-bottom: 1rem;
+        width: 50%;
+    }
+
+    #postTitle,
+    #postContent {
+        width: 100%;
+    }
+
+    #postContent {
+        height: 6rem;
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #666;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    &__submit {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+        border: none;
+        font-size: 0.9rem;
+        text-decoration: none;
+        font-weight: 500;
+
+        >svg {
+            width: 1.5rem;
+        }
+
+        position: absolute;
+        bottom: 1.3rem;
+        cursor: pointer;
+        background-color: #f1f8f3;
+        color: #227396;
+
+        &:hover {
+            background-color: #e4f1e8;
+        }
+    }
+}
