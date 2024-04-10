@@ -7,6 +7,7 @@ const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function Collection() {
     const [collection, setCollection] = useState([]);
+    const [removedMovies,setRemovedMovies] = useState([]);
 
     // Fetch posts from the DB
     const fetchCollection = () => {
@@ -22,21 +23,38 @@ function Collection() {
             });
     };
 
+    const renderCollection = () => {
+        return collection.map((movie) => (
+            <CollectionMovie key={movie.movie_id} movie={movie} />
+        ))
+    }
+
     useEffect(() => {
-        // return () => {
-        //     const removedMovies = collection.filter(movie => movie.removed === true);
-        //     if (removedMovies.length > 0) {
-        //         axios.post(`${SERVER_URL}/remove-collection`, removedMovies)
-        //             .then(() => {
-        //                 console.log('CollectionMovies marked as removed have been updated in the database.');
-        //             })
-        //             .catch((err) => {
-        //                 console.log('Error updating removed CollectionMovies:', err);
-        //             });
-        //     }
-        // };
-        console.log(collection);
-    }, [collection]);
+        setRemovedMovies(collection.filter(movie => movie.removed));
+    },[collection]);
+
+    useEffect(() => {
+        // Cleanup logic to delete removed movies
+        const cleanup = () => {
+            //const removedMovies = collection.filter(movie => movie.removed);
+            const movieIds = removedMovies.map(movie => movie.movie_id);
+            movieIds.forEach(movieId => {
+                let tar = document.getElementById(`${movieId}`)
+                if (tar) {
+                    tar.classList.add("hide")
+                }
+                axios.delete(`${SERVER_URL}/collection/${movieId}`, { withCredentials: true })
+                    .then(() => {
+                        console.log(`CollectionMovie ${movieId} marked as removed has been deleted.`);
+                    })
+                    .catch((err) => {
+                        console.log('Error deleting removed CollectionMovie:', err);
+                    });
+            });
+        };
+        // Run cleanup logic when component unmounts (navigating away from the page)
+        return cleanup;
+    }, [removedMovies]);
 
     useEffect(() => {
         fetchCollection();
@@ -49,9 +67,7 @@ function Collection() {
             
 
             {/* Render a list of Post components */}
-            {collection.map((movie) => (
-                <CollectionMovie key={movie.movie_id} movie={movie} />
-            ))}
+            {renderCollection()}
         </section>
         </>
     );
