@@ -13,7 +13,7 @@ const PostsSection = ({movie_id}) => {
   const fetchPosts = () => {
     // Make sure to user `withCredentials` for a GET request, to pass the cookie to the server
     axios
-      .get(`${SERVER_URL}/posts`, { withCredentials: true })
+      .get(`${SERVER_URL}/posts/${movie_id}`, { withCredentials: true })
       .then((posts) => {
         // Update state with fetched posts
         setPosts(posts.data);
