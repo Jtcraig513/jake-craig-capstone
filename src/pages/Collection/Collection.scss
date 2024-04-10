@@ -2,6 +2,10 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+.hide {
+    display: none;
+}
+
 .collection {
     display: flex;
     flex-direction: row;
