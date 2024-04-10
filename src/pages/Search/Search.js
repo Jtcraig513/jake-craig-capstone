@@ -86,7 +86,7 @@ function Search({ firstRender, services, setServices }) {
 
     const mapMovieList = () => {
         if (!movieList || movieList.length === 0) {
-            return <p>No results found</p>;
+            return <p className='hide'>No results found</p>;
         }
         return movieList.map((movie, index) => {
             return (

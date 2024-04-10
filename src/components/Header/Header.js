@@ -5,7 +5,7 @@ function Header() {
     return (
         <header className='header'>
             <Link className='header__logo' to='/'>
-                <img className='header__logo-img' src='' alt='logo'/>
+                <h2 className='header__logo-txt'>StreamFinder</h2>
             </Link>
             <nav className='header__nav'>
                 <NavLink to='/' className={(navData) => navData.isActive

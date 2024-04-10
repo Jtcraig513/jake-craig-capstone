@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Post from '../../components/Post/Post';
-import CreatePost from '../../components/CreatePost/CreatePost';
+import Post from '../Post/Post';
+import CreatePost from '../CreatePost/CreatePost';
 import './PostSection.scss';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-const PostsSection = () => {
+const PostsSection = ({movie_id}) => {
   const [posts, setPosts] = useState([]);
 
   // Fetch posts from the DB
@@ -29,13 +29,13 @@ const PostsSection = () => {
 
   return (
     <section className="posts-section">
-      <h1>Posts</h1>
+      <h1 className='posts-section__title'>Comments</h1>
 
       {/*
         Create new post component.
         Note the passed prop that allows it to re-fetch the posts after new one is created
       */}
-      <CreatePost onPostCreate={fetchPosts} />
+      <CreatePost onPostCreate={fetchPosts} movie_id={movie_id}/>
 
       {/* Render a list of Post components */}
       {posts.map((post) => (

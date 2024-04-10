@@ -10,17 +10,25 @@ const CreatePost = (props) => {
 
   useEffect(() => {
     // Check if user is currently logged in, so we can display a form or login button conditionally
-    axios
-      .get(`${SERVER_URL}/auth/profile`, { withCredentials: true })
-      .then((res) => {
-        if (res.data) {
-          setIsLoggedIn(true);
+    const fetchProfile = async () => {
+        try {
+          // Check if user is currently logged in, so we can display a form or login button conditionally
+          const res = await axios.get(`${SERVER_URL}/auth/profile`, { withCredentials: true });
+          if (res.data) {
+            setIsLoggedIn(true);
+          }
+        } catch (error) {
+          console.error('Error fetching profile:', error);
+          // Handle error here, such as setting an error state or showing an error message to the user
         }
-      });
+      };
+    
+      fetchProfile();
   }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    console.log(props.movie_id);
 
     const { postTitle, postContent } = e.target;
 
@@ -29,6 +37,7 @@ const CreatePost = (props) => {
       .post(
         `${SERVER_URL}/posts`,
         {
+            movie_id: props.movie_id,
           title: postTitle.value,
           content: postContent.value,
         },
@@ -49,11 +58,11 @@ const CreatePost = (props) => {
       {isLoggedIn ? (
         // If user is logged in, render form for creating a post
         <form className="post-form" onSubmit={handleFormSubmit}>
-          <h3>Create New Post</h3>
+          <h3 className='post-form__header'>Create New Comment</h3>
           <div className="post-form__fields">
             <div className="post-form__field">
               <label htmlFor="postTitle" className="post-form__label">
-                Post Title
+                Comment Title
               </label>
               <input
                 type="text"
@@ -65,7 +74,7 @@ const CreatePost = (props) => {
             </div>
             <div className="post-form__field">
               <label htmlFor="postContent" className="post-form__label">
-                Post Content
+                Content
               </label>
               <textarea
                 type="text"

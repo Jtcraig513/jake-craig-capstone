@@ -4,5 +4,22 @@
 
 .posts-section {
     position: relative;
-    padding-bottom: 175px;
+    padding-bottom: 2rem;
+    border-top: 1px solid $Slate;
+    @include tablet {
+        padding-left: 2.5rem; 
+        padding-right: 2.5rem;
+    }
+    @include desktop {
+        padding-left: 4.5rem; 
+        padding-right: 4.5rem;
+    }
+    
+
+    &__title {
+        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid $Cloud;
+    }
 }

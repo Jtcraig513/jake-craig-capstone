@@ -3,29 +3,44 @@
 @use "../../styles/partials/variables" as *;
 
 .post {
-    margin-bottom: 3rem;
-    border-bottom: 2px solid #fcf2ee;
+    border-bottom: 1px solid $Cloud;
+    padding: .5rem 1rem 1rem 1rem;
+    font-family:Arial;
     &__title {
       font-size: 1.2rem;
-      color: #a37a74;
+      color: rgb(9, 9, 14);
+      text-shadow: 1px 1px $Cloud;
+      @include tablet-and-desktop {
+        font-size: 1.5rem;
+        }
     }
     &__details {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-top: .5rem;
     }
     &__author {
       display: flex;
       gap: 0.5rem;
       align-items: center;
-      color: #666;
+      padding-bottom: .5rem;
     }
     &__avatar {
       height: 1.5rem;
+      border-radius: 10px;
+      @include tablet-and-desktop {
+        height: 2rem;
+    }
     }
     &__username {
       margin: 0;
       font-size: 0.8rem;
+      color: $Slate;
+      font-weight: 600;
+        @include tablet-and-desktop {
+            font-size: 1.2rem;
+        }
     }
     &__owned {
       font-size: 0.75rem;
@@ -37,6 +52,18 @@
     &__published {
       margin: 0;
       font-size: 0.8rem;
-      color: #666;
+      color: $Slate;
+      font-weight: 600;
+      padding-bottom: .5rem;
+        @include tablet-and-desktop {
+            font-size: 1rem;
+        }
+    }
+    &__content {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1rem;
+        @include tablet-and-desktop {
+            font-size: 1.3rem;
+        }
     }
 }

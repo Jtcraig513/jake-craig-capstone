@@ -8,11 +8,24 @@
     background-color: rgb(110,46,216,.20);
     padding: .25rem .25rem .15rem .25rem;
     border-radius: 10px;
+    @include tablet-and-desktop {
+        padding: .5rem .5rem .5rem .5rem;
+    }
 }
 
 .details {
     display: flex;
     flex-direction: column;
+    @include tablet {
+        padding-left: 2.5rem; 
+        padding-right: 2.5rem;
+    }
+    @include desktop {
+        flex-direction: row;
+        padding-left: 4.5rem; 
+        padding-right: 4.5rem;
+        margin-top: 1.5rem;
+    }
 
     &-poster {
         align-self: center;
@@ -21,6 +34,11 @@
         margin-bottom: 1rem;
         border-radius: 6px;
         box-shadow: 0px 2px 4px 2px $Blue-Violet;
+        @include desktop {
+            height: 55vh;
+            align-self: baseline;
+            margin-right: 2.5rem;
+        }
     }
 
     &-container {
@@ -33,6 +51,10 @@
 
         &__title {
             padding: 1rem 1rem .5rem 1rem;
+            @include tablet-and-desktop {
+                padding: 1.5rem 2rem 1.5rem 2rem; 
+                font-size: 2.75rem;
+            }
         }
 
         &__button {
@@ -46,6 +68,18 @@
             border: none;
             border-radius: 6px;
             box-shadow: 0px 2px 2px 0px $Blue-Violet;
+            @include tablet-and-desktop {
+                padding: 1rem .8rem 1rem .8rem; 
+                border-radius: 16px;
+                margin-bottom: 1.5rem;
+                margin-left: 2rem;
+            }
+
+            &-txt {
+                @include tablet-and-desktop {
+                    font-size: 1.25rem;
+                }
+            }
         }
         &__button:hover {
             transform: scale(1.025);
@@ -62,17 +96,15 @@
                 align-items: center;
                 padding: 1rem 1.5rem 1rem 2rem;
                 border-top: 1px solid $Cloud;
+                @include tablet-and-desktop {
+                    padding: 1rem 2rem 1rem 3rem;
+                }
 
                 &-icon {
                     border-radius: 6px;
                     height: 2rem;
                     width: 2rem;
-                    @include tablet {
-                        height: 2.5rem;
-                        width: 2.5rem;
-                        border-radius: 8px;
-                    }
-                    @include desktop {
+                    @include tablet-and-desktop {
                         height: 3rem;
                         width: 3rem;
                         border-radius: 10px;
@@ -83,6 +115,9 @@
 
                     &-size {
                         font-size: 1.2rem;
+                        @include tablet-and-desktop {
+                            font-size: 1.6rem;
+                        }
                     }
                 }
             }
@@ -95,16 +130,30 @@
             border-top: 1px solid $Slate;
             padding-top: 1rem;
             padding-bottom: 1rem;
+            @include tablet-and-desktop {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
 
             &-title {
                 margin-bottom: .25rem;
                 padding-left: 1rem;
+                @include tablet-and-desktop {
+                    padding-left: 2rem;
+                    margin-bottom: .5rem;
+                }
             }
 
             &-video {
                 align-self: center;
                 max-width: 90%;
                 height:25vh;
+                @include tablet-and-desktop {
+                    width: 36rem;
+                }
+                @include desktop {
+                    height: 40vh;
+                }
             }
         }
 
@@ -125,11 +174,23 @@
                 padding-right: 1rem;
                 margin-top: .5rem;
 
+                @include tablet-and-desktop {
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    margin-top: 1rem;
+                }
+
                 &-txt {
                     font-weight: 700;
+                    @include tablet-and-desktop {
+                        font-size: 1.5rem;
+                    }
                 }
                 &-date {
                     font-weight: 600;
+                    @include tablet-and-desktop {
+                        font-size: 1.25rem;
+                    }
                 }
             }
             &-genres {
@@ -139,9 +200,17 @@
                 flex-wrap: wrap;
                 gap: .35rem;
                 
+                
                 padding-left: 1rem;
                 padding-right: 1rem;
                 margin-top: .5rem;
+                
+                @include tablet-and-desktop {
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    gap: 1rem;
+                    margin-top: 1rem;
+                }
 
                 &-txt {
                     font-weight: 700;
@@ -160,11 +229,26 @@
                 margin-top: .5rem;
                 margin-bottom: 1rem;
 
+                @include tablet-and-desktop {
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    margin-top: 1rem;
+                    margin-bottom: 2rem;
+                }
+
                 &-txt {
                     font-weight: 700;
+                    @include tablet-and-desktop {
+                        font-size: 1.5rem;
+                        margin-bottom: .5rem;
+                    }
                 }
                 &-summary {
                     font-weight: 400;
+                    @include tablet-and-desktop {
+                        font-size: 1.35rem;
+                        font-family:'Times New Roman', Times, serif;
+                    }
                 }
             }
         }

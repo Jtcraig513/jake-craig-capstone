@@ -1,0 +1,70 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    width: 9.5rem;
+    height: auto;
+    border-radius: 10px;
+    background-color: rgb(31, 31, 92);
+    box-shadow: 0px 2px 4px 2px $Blue-Violet;
+    
+    @include tablet-and-desktop {
+        width: 14rem;
+        margin-right: 1rem;
+        margin-left: .5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    &__poster {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    &__buncher {
+        display: flex;
+        flex-direction: column;
+        padding: .5rem .5rem .5rem .5rem;
+        @include tablet-and-desktop {
+            padding: .75rem .75rem .75rem .75rem;
+        }
+        
+
+        &-title {
+            @include tablet-and-desktop {
+                font-size: 1.3rem;
+            }
+        }
+
+        &-button {
+            display: flex;
+            color: $Blue-Violet;
+            justify-content: center;
+            align-self: flex-end;
+            width: 6rem;
+            background-color: rgb(192, 170, 228);
+            padding: .35rem .45rem .35rem .25rem;
+            border-radius: 15px;
+            border: 1px solid $Blue-Violet;
+            @include tablet-and-desktop {
+                padding: .5rem .5rem .5rem .4rem;
+                margin-top: .7rem;
+            }
+        }
+
+        &-button:hover {
+            transform: scale(1.025);
+        }
+    }
+}
+.movie:hover {
+    transform: scale(1.025);
+}
