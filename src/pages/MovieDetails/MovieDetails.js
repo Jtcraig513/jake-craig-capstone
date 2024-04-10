@@ -10,6 +10,7 @@ import hulu from '../../assets/logos/hulu.jpg'
 import paramount_plus from '../../assets/logos/paramount_plus.png'
 import disney_plus from '../../assets/logos/disney_plus.jpg'
 import peacock from '../../assets/logos/peacock.jpg'
+import PostsSection from '../../components/PostSection/PostSection';
 
 function MovieDetails({ services }) {
     const { movieId } = useParams();
@@ -138,8 +139,8 @@ function MovieDetails({ services }) {
 
             <section className='details-container'>
                 <h1 className='details-container__title'>{movie.title}</h1>
-                <button className='add-collection details-container__button' onClick={handleAdd}>
-                    <h3>+ Collection</h3>
+                <button className='details-container__button' onClick={handleAdd}>
+                    <h3 className='details-container__button-txt'>+ Collection</h3>
                 </button>
 
                 <section className='details-container__sources'>
@@ -160,7 +161,6 @@ function MovieDetails({ services }) {
                     <section className='details-container__info-genres'>
                         <p className='p-large details-container__info-release-txt'>Genres: </p>
                         {movie.genres.map((genre) => {
-                            console.log(genre);
                             return <p className='p-medium details-container__info-release-date genre'>{genre}</p>
                         })}
                     </section>
@@ -170,6 +170,7 @@ function MovieDetails({ services }) {
                         <p className='p-large details-container__info-overview-summary'>{movie.overview}</p>
                     </section>
                 </section>
+                <PostsSection movie_id={movieId}/>
             </section>
         </main>
     );}

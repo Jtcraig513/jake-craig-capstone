@@ -4,6 +4,10 @@ import Search from './pages/Search/Search';
 import Header from './components/Header/Header';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import { useState } from 'react';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import PostsSection from './components/PostSection/PostSection';
+import AuthFailPage from './pages/AuthFailPage.js/AuthFailPage';
+import Collection from './pages/Collection/Collection';
 
 function App() {
 
@@ -28,6 +32,9 @@ function App() {
           <Routes>
               <Route path='/' element={<Search firstRender={firstRender} services={services} setServices={setServices}/>} />
               <Route path='/movie/:movieId' element={<MovieDetails services={services}/>} />
+              <Route path='/collection' element={<Collection />} />
+              <Route path='/profile' element={<ProfilePage />} />
+              <Route path='/auth-fail' element={<AuthFailPage />} />
           </Routes>
         </section>
       </section>

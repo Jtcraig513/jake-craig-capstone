@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.login-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+
+    >svg {
+        width: 1.5rem;
+    }
+
+    background-color: #f1f8f3;
+
+    &:hover {
+        background-color: #e4f1e8;
+    }
+    &-logo {
+        border-radius: 20px;
+    }
+}

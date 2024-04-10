@@ -6,37 +6,85 @@
     display: flex;
     justify-content: space-between;
     padding: 1.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $Blue-Violet;
     @include tablet {
-        padding: 2.5rem;
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
     }
     @include desktop {
-        padding: 3.5rem;
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
+    }
+
+    &__logo {
+        text-decoration: none;
+        &:link,
+        &:visited {
+          color: inherit;
+        }
+        &-txt {
+            line-height: 1rem;
+            color: $Blue-Violet;
+            @include tablet {
+                padding-left: 2.5rem;
+            }
+            @include desktop {
+                padding-left: 4.5rem;
+            }
+        }
     }
 
     &__nav {
         display: flex;
         flex-direction: row;
+        gap: .5rem;
+        &-item {
+            text-decoration: none;
+            @include tablet {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
         
+            @include desktop {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+        @include tablet {
+            gap: 2rem;
+        }
+        @include desktop {
+            gap: 4rem;
+        }
+    }
 
-        &-link {
+    &__nav-link {
+        @include tablet {
+            font-size: 1.5rem;
+        }
+    
+        @include desktop {
+            font-size: 2rem;
+        }
+        &:link,
+        &:visited {
             display: flex;
-            padding-left: .5rem;
-            padding-right: .5rem;
             justify-content: center;
             text-decoration: none;
             color: inherit;
-            @include tablet{
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-            @include desktop{
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
         }
-
-        &-item {
-            text-decoration: none;
+    }
+    &__nav-link--active {
+        border-bottom: 3px solid $Blue-Violet;
+        border-radius: 3px;
+        @include tablet {
+            border-bottom: 4px solid $Blue-Violet;
+            border-radius: 5px;
+        }
+    
+        @include desktop {
+            border-bottom: 5px solid $Blue-Violet;
+            border-radius: 6px;
         }
     }
 }
