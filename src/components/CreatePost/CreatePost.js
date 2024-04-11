@@ -28,7 +28,6 @@ const CreatePost = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(props.movie_id);
 
     const { postTitle, postContent } = e.target;
 

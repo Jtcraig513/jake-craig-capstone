@@ -2,6 +2,99 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+.home {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25%;
+    margin-left: 1rem;
+    height: 10vh;
+    justify-content: space-evenly;
+
+    @include tablet {
+        margin-left: 2rem;
+        height: 20vh;
+    }
+    @include desktop {
+        margin-top: 10%;
+        margin-left: 8rem;
+        height: 25vh;
+    }
+
+    &__header {
+        color: #a169fa;
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: 5rem;
+            padding-bottom: 1.25rem;
+        }
+        @include desktop {
+            font-size: 6rem;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &__subhead {
+        font-size: 1rem;
+        line-height: 1.1rem;
+        font-weight: 600;
+        width: 70%;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            font-weight: 600;
+            width: 50%;
+            padding-bottom: 1rem;
+        }
+        @include desktop {
+            font-size: 1.75rem;
+            line-height: 2rem;
+            font-weight: 600;
+            width: 60%;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__button {
+        display: flex;
+        color: $White;
+        font-size: .8rem;
+        width: 8rem;
+        text-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        background-color: $Blue-Violet;
+        border: none;
+        border-radius: 20px;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+
+        @include tablet-and-desktop {
+            display: flex;
+            color: $White;
+            font-size: 1rem;
+            width: 10rem;
+            text-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            height: 2.25rem;
+            background-color: $Blue-Violet;
+            border: none;
+            border-radius: 20px;
+            padding: 1.8rem 2.5rem 1.8rem 2.5rem;
+            transition: background-color 400ms, color 200ms;
+        }
+    }
+    &__button:hover {
+        cursor: pointer;
+        background-color: rgb(219, 198, 252);
+        color: $Slate;
+    }
+}
+
 .search {
     display: flex;
     flex-direction: column;
@@ -30,11 +123,12 @@
             border-radius: 6px;
             border: 2px solid $Blue-Violet;
             font-size: 1rem;
+
             @include tablet {
                 font-size: 1.5rem;
                 padding: 1.25rem;
             }
-        
+
             @include desktop {
                 font-size: 2rem;
                 padding: 1.5rem;
@@ -59,8 +153,9 @@
         border-radius: 2px;
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
+
         @include desktop {
-            max-height:100vh;
+            max-height: 100vh;
         }
     }
 }

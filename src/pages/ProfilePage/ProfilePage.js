@@ -48,14 +48,15 @@ const ProfilePage = () => {
   if (isAuthenticating) return null;
 
   return (
+    <>
+    <h1 className='profile-header'>Profile Page</h1>
     <section className="profile-page">
-      <h1>Profile Page</h1>
       {/* If user is logged in, render their profile information */}
       {isLoggedIn ? (
         profileData && (
           <>
-            <h2>Hello, {profileData.username}</h2>
-            <h3>Registered since: {formatDate(profileData.updated_at)}</h3>
+            <h2 className='profile-page__user'>Hello, {profileData.username}</h2>
+            <h3 className='profile-page__registered'>Registered since: {formatDate(profileData.updated_at)}</h3>
             <img
               className="profile-page__avatar"
               src={profileData.avatar_url}
@@ -76,7 +77,7 @@ const ProfilePage = () => {
           <LoginButton />
         </>
       )}
-    </section>
+    </section></>
   );
 };
 

@@ -3,7 +3,7 @@ import './Search.scss';
 import axios from 'axios';
 import Result from '../../components/Result/Result';
 
-function Search({ firstRender, services, setServices }) {
+function Search({ firstRender, setFirstRender, services, setServices }) {
 
     const apiKey = process.env.REACT_APP_API_KEY;
     const apiMHost = process.env.REACT_APP_MOVIES_API_HOST;
@@ -60,12 +60,11 @@ function Search({ firstRender, services, setServices }) {
 
                 const response = await axios.request(options);
                 const data = response.data.contents;
-                console.log(data);
+
                 let filteredData = data.map((m) => filterServices(m)).filter(Boolean);
                 if (filteredData.length > 7) {
                     filteredData = filteredData.slice(0, 7);
                 }
-                console.log(filteredData);
                 setMovieList(filteredData);
 
             } catch (error) {
@@ -103,6 +102,24 @@ function Search({ firstRender, services, setServices }) {
         })
     }
 
+    const handleFirst = () => {
+        setFirstRender(false);
+    }
+
+    if (firstRender) {
+        return (
+            <section className='home'>
+                <h1 className='home__header'>StreamFinder</h1>
+
+                <h3 className='home__subhead'>Search for any movie on any of your streaming services</h3>
+
+                <button className='home__button' onClick={handleFirst}>Start Searching</button>
+            </section>
+        )
+    }
+
+    else {
+
     return (
         <main className='search'>
             <section className='search__bar'>
@@ -120,6 +137,7 @@ function Search({ firstRender, services, setServices }) {
             </section>
         </main>
     );
+    }
 }
 
 export default Search;

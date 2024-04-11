@@ -117,7 +117,7 @@ function MovieDetails({ services }) {
     const populateSources = () => {
         return movie.sources.map((source) => {
             return (
-                <section className='details-container__sources-source'>
+                <section className='details-container__sources-source' key={source.source}>
                     <img className='details-container__sources-source-icon'
                         src={imagesMapped[source.source]} alt={linksMapped[source.source]} />
                     <a href={source.link} className='details-container__sources-source-link'>
@@ -236,7 +236,7 @@ function MovieDetails({ services }) {
                         <section className='details-container__info-genres'>
                             <p className='p-large details-container__info-release-txt'>Genres: </p>
                             {movie.genres.map((genre) => {
-                                return <p className='p-medium details-container__info-release-date genre'>{genre}</p>
+                                return <p className='p-medium details-container__info-release-date genre' key={genre}>{genre}</p>
                             })}
                         </section>
 
