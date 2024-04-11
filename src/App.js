@@ -30,7 +30,7 @@ function App() {
         <Header />
         <section className='page-container__content'>
           <Routes>
-              <Route path='/' element={<Search firstRender={firstRender} services={services} setServices={setServices}/>} />
+              <Route path='/' element={<Search firstRender={firstRender} setFirstRender={setFirstRender} services={services} setServices={setServices}/>} />
               <Route path='/movie/:movieId' element={<MovieDetails services={services}/>} />
               <Route path='/collection' element={<Collection />} />
               <Route path='/profile' element={<ProfilePage />} />

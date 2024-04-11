@@ -2,11 +2,53 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+.profile-header {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $Cloud;
+  @include tablet {
+    padding-top: 2rem;
+    padding-left: 3rem;
+  }
+  @include desktop {
+    padding-top: 2rem;
+    padding-left: 4rem;
+  }
+}
+
 .profile-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(110, 46, 216, .30);
+  width: 90%;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px 2px rgb(110, 46, 216, .60);
+  @include tablet {
+    width: 50%;
+    margin-top: 2rem;
+    padding: 2rem;
+    margin-left: 3.5rem;
+  }
+  @include desktop {
+    width: 20%;
+    margin-top: 3rem;
+    padding: 2.5rem;
+    margin-left: 6rem;
+  }
+  &__user {
+    padding-bottom: .5rem;
+  }
+  &__registered {
+    padding-bottom: 1rem;
+  }
     &__avatar {
       width: 12rem;
       padding: 0.5rem;
       background-color: #e4f1e8;
+      border-radius: 20px;
     }
     &__logout-wrapper {
       margin-top: 2rem;

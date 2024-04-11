@@ -9,16 +9,6 @@ function CollectionMovie({ movie }) {
 
     const [isRemoved, setIsRemoved] = useState(null);
 
-    // useEffect(() => {
-    //     if (isRemoved) {
-    //         // If movie is marked as removed, update the button text
-    //         event.target.innerHTML = '&#10003; Collection';
-    //     } else {
-    //         // Otherwise, set the button text to default
-    //         event.target.innerHTML = '+ Collection';
-    //     }
-    // }, [isRemoved]);
-
     const handleClick = () => {
         // Toggle the removed state
         setIsRemoved(prevIsRemoved => !prevIsRemoved);
@@ -29,7 +19,7 @@ function CollectionMovie({ movie }) {
         if (isRemoved!=null) {
             // Send a PUT request to update the movie's removed status
             axios.put(`${SERVER_URL}/collection/${movie.movie_id}`, {
-                movieId: movie.movie_id,
+                movie_id: movie.movie_id,
                 removed: isRemoved // Toggle the removed flag
             }, { withCredentials: true })
             .then(() => {
