@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CollectionMovie from '../../components/CollectionMovie/CollectionMovie';
 import './Collection.scss';
+import LoginButton from '../../components/LoginButton/LoginButton';
 
 const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -24,6 +25,11 @@ function Collection() {
     };
 
     const renderCollection = () => {
+        if (collection.length===0) {
+            return (
+                <h2 className='empty-collection'>Your Collection is empty</h2>
+            )
+        }
         return collection.map((movie) => (
             <CollectionMovie key={movie.movie_id} movie={movie} />
         ))
@@ -84,8 +90,9 @@ function Collection() {
         return (
             <>
                 <h1 className='collection-title'>Collection</h1>
-                <section className="collection">
+                <section className="collection empty-collection">
                     <h2 className='empty-collection'>You need to be logged in to view/add to your Collection</h2>
+                    <LoginButton />
                 </section>
             </>
         );

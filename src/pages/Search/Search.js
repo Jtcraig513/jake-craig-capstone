@@ -111,7 +111,7 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
             <section className='home'>
                 <h1 className='home__header'>StreamFinder</h1>
 
-                <h3 className='home__subhead'>Search for any movie on any of your streaming services</h3>
+                <h3 className='home__subhead'>Search for any movie on all your streaming services</h3>
 
                 <button className='home__button' onClick={handleFirst}>Start Searching</button>
             </section>
