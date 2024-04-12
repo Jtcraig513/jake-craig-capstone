@@ -1,0 +1,50 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.hide {
+    display: none;
+}
+.empty-collection {
+    text-align: center;
+    justify-content: center;
+}
+
+.collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .85rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: 1px solid $Cloud;
+    border-radius: 25px;
+    box-shadow: 2px 2px 2px 0px $Cloud;
+
+    @include tablet {
+        gap:0;
+        padding-left: .5rem;
+        padding-top: 1rem;
+        border-bottom: 3px solid $Cloud;
+    }
+    @include desktop {
+        gap:0;
+        padding-right: 4rem;
+        padding-left: 4rem;
+        padding-top: 1.75rem;
+        border-bottom: 3px solid $Cloud;
+    }
+}
+.collection-title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    font-weight: 700;
+    @include tablet-and-desktop {
+        padding-left: 2rem;
+
+    }
+    @include desktop {
+        padding-left: 4rem;
+    }
+}
