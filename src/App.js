@@ -5,9 +5,9 @@ import Header from './components/Header/Header';
 import MovieDetails from './pages/MovieDetails/MovieDetails';
 import { useState } from 'react';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
-import PostsSection from './components/PostSection/PostSection';
 import AuthFailPage from './pages/AuthFailPage.js/AuthFailPage';
 import Collection from './pages/Collection/Collection';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -37,6 +37,7 @@ function App() {
               <Route path='/auth-fail' element={<AuthFailPage />} />
           </Routes>
         </section>
+        <Footer />
       </section>
     </BrowserRouter>
   );
