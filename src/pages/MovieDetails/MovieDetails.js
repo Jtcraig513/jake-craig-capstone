@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './MovieDetails.scss';
-import { Link, useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import netflix from '../../assets/logos/netflix.png';
 import hbo from '../../assets/logos/hbo_max.jpg';
@@ -61,7 +61,7 @@ function MovieDetails({ services }) {
 
 
 
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const getMovie = async () => {
             try {
@@ -83,7 +83,7 @@ function MovieDetails({ services }) {
             }
         }
         getMovie();
-    }, [movieId]);
+    });
 
     const formatRelease = () => {
         let date = movie.release_date.split('');
@@ -102,7 +102,7 @@ function MovieDetails({ services }) {
     // Replace placeholder with embedded YouTube video
     function embedYouTubeVideo(videoId) {
         const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-        return <iframe src={embedUrl} frameBorder='0' className='details-container__trailer-video' />
+        return <iframe src={embedUrl} title='youtube-trailer' frameBorder='0' className='details-container__trailer-video' />
     }
 
     const getTrailerId = () => {

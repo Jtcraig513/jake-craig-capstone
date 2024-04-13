@@ -25,7 +25,7 @@ const PostsSection = ({movie_id}) => {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  });
 
   return (
     <section className="posts-section">
