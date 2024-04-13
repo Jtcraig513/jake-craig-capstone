@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useCallback } from 'react';
 import './Search.scss';
 import axios from 'axios';
 import Result from '../../components/Result/Result';
@@ -28,7 +28,7 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
         setSearchInput(event.target.value);
     }
 
-    const filterServices = (unfiltered) => {
+    const filterServices = useCallback((unfiltered) => {
         if (unfiltered.contentType!=='movie' || unfiltered.sources.length===0) {
             return;
         }
@@ -41,8 +41,8 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
 
         unfiltered.sources = newArray;
         return unfiltered;
-    }
-
+    }, [services]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         let timeoutId;
     
@@ -81,7 +81,7 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [searchInput]);
+    }, [searchInput, apiKey, apiMHost, apiMUrl,filterServices]);
 
     const mapMovieList = () => {
         if (!movieList || movieList.length === 0) {

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './Result.scss';
-import { useEffect, useState } from 'react';
 import netflix from '../../assets/logos/netflix.png';
 import hbo from '../../assets/logos/hbo_max.jpg';
 import prime from '../../assets/logos/prime.jpg';

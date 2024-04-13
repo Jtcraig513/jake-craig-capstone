@@ -29,7 +29,7 @@ function CollectionMovie({ movie }) {
                 console.error('Error updating movie:', error);
             });
         }
-    }, [isRemoved]);
+    }, [isRemoved,movie.movie_id]);
     
     return (
         <section className="movie" id={`${movie.movie_id}`}>
