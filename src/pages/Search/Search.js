@@ -81,7 +81,8 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [searchInput, apiKey, apiMHost, apiMUrl,filterServices]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchInput]);
 
     const mapMovieList = () => {
         if (!movieList || movieList.length === 0) {

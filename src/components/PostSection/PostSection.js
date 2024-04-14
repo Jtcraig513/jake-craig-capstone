@@ -25,7 +25,9 @@ const PostsSection = ({movie_id}) => {
 
   useEffect(() => {
     fetchPosts();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
 
   return (
     <section className="posts-section">
