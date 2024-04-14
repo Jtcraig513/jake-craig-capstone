@@ -48,7 +48,7 @@ const CreatePost = (props) => {
         e.target.reset();
       })
       .catch((err) => {
-        console.log('Error creating a new post:', err);
+        console.log('Error creating a new post:', err); 
       });
   };
 
