@@ -81,6 +81,7 @@ function Search({ firstRender, setFirstRender, services, setServices }) {
         return () => {
             clearTimeout(timeoutId);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchInput]);
 
     const mapMovieList = () => {
