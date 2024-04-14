@@ -61,7 +61,7 @@ function MovieDetails({ services }) {
 
 
 
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         const getMovie = async () => {
             try {

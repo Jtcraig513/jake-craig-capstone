@@ -28,6 +28,7 @@ const PostsSection = ({movie_id}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   return (
     <section className="posts-section">
       <h1 className='posts-section__title'>Comments</h1>

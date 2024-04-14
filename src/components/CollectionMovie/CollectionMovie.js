@@ -29,8 +29,10 @@ function CollectionMovie({ movie }) {
                 console.error('Error updating movie:', error);
             });
         }
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isRemoved]);
+
     
     return (
         <section className="movie" id={`${movie.movie_id}`}>
